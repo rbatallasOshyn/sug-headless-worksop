@@ -9,5 +9,5 @@ config.graphQLEndpointPath = process.env.GRAPH_QL_ENDPOINT_PATH || '/sitecore/ap
 config.defaultLanguage = process.env.DEFAULT_LANGUAGE || 'en',
 config.graphQLEndpoint = process.env.GRAPH_QL_ENDPOINT || 'https://workshop.suglatam.com/sitecore/api/graph/edge',
 config.layoutServiceConfigurationName = process.env.LAYOUT_SERVICE_CONFIGURATION_NAME || 'sxa-jss',
-config.publicUrl = process.env.PUBLIC_URL || 'http://localhost:3000',
+config.publicUrl = process.env.PUBLIC_URL || 'https://willowy-blancmange-6fd800.netlify.app',
 module.exports = config;

@@ -13096,7 +13096,7 @@ module.exports = Url;
 // See scripts/bootstrap.ts to modify the generation of this file.
 
 const config = {};
-config.sitecoreApiKey = process.env.SITECORE_API_KEY || "{1F320DE2-6517-4377-94E1-C4D5E66EC5EF}", config.sitecoreApiHost = process.env.SITECORE_API_HOST || "https://workshop.suglatam.com", config.sitecoreSiteName = process.env.SITECORE_SITE_NAME || "workshop-jss-app", config.graphQLEndpointPath = process.env.GRAPH_QL_ENDPOINT_PATH || "/sitecore/api/graph/edge", config.defaultLanguage = process.env.DEFAULT_LANGUAGE || "en", config.graphQLEndpoint = process.env.GRAPH_QL_ENDPOINT || "https://workshop.suglatam.com/sitecore/api/graph/edge", config.layoutServiceConfigurationName = process.env.LAYOUT_SERVICE_CONFIGURATION_NAME || "sxa-jss", config.publicUrl = "http://localhost:3000" || 0, module.exports = config;
+config.sitecoreApiKey = process.env.SITECORE_API_KEY || "{1F320DE2-6517-4377-94E1-C4D5E66EC5EF}", config.sitecoreApiHost = process.env.SITECORE_API_HOST || "https://workshop.suglatam.com", config.sitecoreSiteName = process.env.SITECORE_SITE_NAME || "workshop-jss-app", config.graphQLEndpointPath = process.env.GRAPH_QL_ENDPOINT_PATH || "/sitecore/api/graph/edge", config.defaultLanguage = process.env.DEFAULT_LANGUAGE || "en", config.graphQLEndpoint = process.env.GRAPH_QL_ENDPOINT || "https://workshop.suglatam.com/sitecore/api/graph/edge", config.layoutServiceConfigurationName = process.env.LAYOUT_SERVICE_CONFIGURATION_NAME || "sxa-jss", config.publicUrl = "https://willowy-blancmange-6fd800.netlify.app" || 0, module.exports = config;
 
 
 /***/ }),

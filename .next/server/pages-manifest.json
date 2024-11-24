@@ -1,6 +1,6 @@
 {
-  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/api/healthz": "pages/api/healthz.js",
   "/api/robots": "pages/api/robots.js",
   "/api/sitemap": "pages/api/sitemap.js",

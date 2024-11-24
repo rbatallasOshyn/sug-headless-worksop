@@ -1,1 +1,1 @@
-{"version":1,"functions":{"/api/editing/data/[key]":{},"/api/editing/render":{},"/[[...path]]":{}}}
+{"version":1,"functions":{"/api/editing/render":{},"/api/editing/data/[key]":{},"/[[...path]]":{}}}
