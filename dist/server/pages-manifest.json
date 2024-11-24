@@ -1,6 +1,11 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/[[...path]]": "pages/[[...path]].js"
+  "/api/healthz": "pages/api/healthz.js",
+  "/api/robots": "pages/api/robots.js",
+  "/api/sitemap": "pages/api/sitemap.js",
+  "/api/editing/data/[key]": "pages/api/editing/data/[key].js",
+  "/api/editing/render": "pages/api/editing/render.js",
+  "/[[...path]]": "pages/[[...path]].js",
+  "/_document": "pages/_document.js"
 }
