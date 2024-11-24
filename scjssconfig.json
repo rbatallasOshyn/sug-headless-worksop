@@ -1,0 +1,9 @@
+{
+  "sitecore": {
+    "instancePath": "C:\\inetpub\\wwwroot\\workshop-headless.suglatam.local",
+    "apiKey": "{1F320DE2-6517-4377-94E1-C4D5E66EC5EF}",
+    "deploySecret": "b4wqqx1r2ivi99egm57fqq3z66uclsszp3pv56i1ndag",
+    "deployUrl": "https://workshop.suglatam.com/sitecore/api/jss/import",
+    "layoutServiceHost": "https://workshop.suglatam.com"
+  }
+}
