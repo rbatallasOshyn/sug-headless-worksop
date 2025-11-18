@@ -10,6 +10,7 @@
 
 # next.js
 /out/
+.next
 
 # graphql code generation
 /.generated
