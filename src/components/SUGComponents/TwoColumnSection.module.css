@@ -10,7 +10,7 @@
 }
 
 /* ===============================
-   CARD CON PLASMA STORM GLOW
+   PLASMA CARD (con margin-top)
    =============================== */
 
 .plasmaCard {
@@ -23,6 +23,7 @@
   gap: 32px;
   position: relative;
   overflow: hidden;
+  margin-top: 30px; /* ✔ marginTop solicitado */
 
   /* Glow eléctrico */
   box-shadow:
@@ -31,6 +32,25 @@
     0 0 80px rgba(129, 140, 248, 0.32);
 
   animation: stormGlow 6s ease-in-out infinite;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* ===============================
+   HOVER – CAMBIO DE ESTILO
+   =============================== */
+
+.plasmaCard:hover {
+  background: #000000; /* ✔ fondo negro */
+}
+
+/* título rojo en hover */
+.plasmaCard:hover .title {
+  color: #ff2a2a; /* ✔ rojo fuerte */
+}
+
+/* texto contenido blanco en hover */
+.plasmaCard:hover .contentText * {
+  color: #ffffff !important; /* ✔ blanco */
 }
 
 /* ===============================
@@ -49,12 +69,14 @@
   font-weight: 800;
   margin-bottom: 16px;
   color: #111827;
+  transition: color 0.35s ease; /* suave */
 }
 
 .contentText * {
   color: #374151 !important;
   font-size: 1.05rem;
   line-height: 1.65;
+  transition: color 0.35s ease; /* suave */
 }
 
 /* ===============================
@@ -109,7 +131,7 @@
 }
 
 /* ===============================
-   ANIMACIONES DE PLASMA
+   ANIMACIÓN AURAS
    =============================== */
 
 @keyframes plasmaDrift1 {
