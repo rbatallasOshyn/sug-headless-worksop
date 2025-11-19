@@ -51,7 +51,9 @@ const TwoColumnSection = (props: TwoColumnSectionProps): JSX.Element => {
           align-items: center;
           justify-content: space-between;
           gap: 2rem;
-          padding: 2rem 0;
+          padding: 2rem;
+          border: 2px solid grey; /* 👈 borde gris */
+          border-radius: 6px;
         }
 
         .left,

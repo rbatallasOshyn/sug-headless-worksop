@@ -27,7 +27,7 @@ const DoctorDetails = (): JSX.Element => {
   const photo = fields.Photo as ImageField;
   return (
     <>
-      <div className="g-g">
+      <div className="g-g" style={{ marginTop: '40px' }}>
         <div className="g-u-1-5">
           <NextImage field={photo} />
         </div>
