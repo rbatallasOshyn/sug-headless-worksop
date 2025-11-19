@@ -116,7 +116,7 @@ const DoctorsList = (): JSX.Element => {
         <li key={key}>
           <div className="g-g">
             <div className="g-u-1-6">
-              <NextImage field={photo} />
+              <NextImage field={photo} width={85} height={100}/>
             </div>
             <div className="g-u-5-6">
               <Link href={item.Url.toLocaleLowerCase()} target="_self">
