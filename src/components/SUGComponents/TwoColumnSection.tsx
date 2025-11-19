@@ -12,7 +12,7 @@ import styles from './TwoColumnSection.module.css';
 
 type TwoColumnSectionProps = {
   fields: {
-    Title: TextField;
+    Name: TextField;
     Content: RichTextField;
     Photo: ImageField;
   };
@@ -28,7 +28,7 @@ const TwoColumnSection = (props: TwoColumnSectionProps): JSX.Element => {
       <div className={styles.plasmaCard}>
         <div className={styles.left}>
           <h2 className={styles.title}>
-            <Text field={fields.Title} />
+            <Text field={fields.Name} />
           </h2>
           <div className={styles.contentText}>
             <RichText field={fields.Content} />
