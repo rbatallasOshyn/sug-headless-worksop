@@ -11,8 +11,8 @@ import {
 type TwoColumnSectionProps = {
   fields: {
     Title: TextField;
-    Description: RichTextField;
-    Image: ImageField;
+    Content: RichTextField;
+    Photo: ImageField;
   };
 };
 
@@ -30,14 +30,14 @@ const TwoColumnSection = (props: TwoColumnSectionProps): JSX.Element => {
           <Text field={fields.Title} />
         </h2>
         <div className="description">
-          <RichText field={fields.Description} />
+          <RichText field={fields.Content} />
         </div>
       </div>
 
       <div className="right">
-        {fields.Image && (
+        {fields.Photo && (
           <NextImage
-            field={fields.Image}
+            field={fields.Photo}
             width={600}
             height={400}
             style={{ width: '100%', height: 'auto' }}
