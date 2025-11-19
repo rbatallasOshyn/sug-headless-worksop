@@ -52,8 +52,58 @@ const TwoColumnSection = (props: TwoColumnSectionProps): JSX.Element => {
           justify-content: space-between;
           gap: 2rem;
           padding: 2rem;
-          border: 2px solid grey; /* 👈 borde gris */
+          border: 2px solid grey;
           border-radius: 6px;
+          margin-top: 20px;
+
+          /* Animation */
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeSlide 0.8s ease-out forwards;
+
+          /* Flash corner overlay */
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Flash effect */
+        .two-col::after {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+          transform: scale(0);
+          animation: cornerFlash 0.6s ease-out 0.5s forwards;
+          pointer-events: none;
+        }
+
+        @keyframes fadeSlide {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes cornerFlash {
+          0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0.7;
+          }
+          50% {
+            transform: translate(-20%, -20%) scale(1.2);
+            opacity: 0.4;
+          }
+          100% {
+            transform: translate(0, 0) scale(1.8);
+            opacity: 0;
+          }
         }
 
         .left,
