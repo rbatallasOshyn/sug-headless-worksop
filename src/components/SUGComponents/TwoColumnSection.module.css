@@ -16,20 +16,20 @@
 .plasmaCard {
   width: 90%;
   max-width: 1100px;
-  background: #ffffff; /* FONDO ORIGINAL */
+  background: #ffffff;
   border-radius: 18px;
   padding: 36px;
   display: flex;
   gap: 32px;
   position: relative;
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 60px;
 
-  /* 🔥 Glow rojo intenso */
+  /* 🍷 Glow VINO intenso */
   box-shadow:
-    0 0 22px rgba(255, 30, 30, 0.55),
-    0 0 50px rgba(200, 0, 0, 0.45),
-    0 0 80px rgba(255, 80, 80, 0.35);
+    0 0 22px rgba(120, 0, 40, 0.55),
+    0 0 50px rgba(90, 0, 30, 0.45),
+    0 0 80px rgba(160, 0, 60, 0.35);
 
   animation: stormGlow 6s ease-in-out infinite;
   transition: background 0.35s ease, color 0.35s ease;
@@ -40,21 +40,19 @@
    =============================== */
 
 .plasmaCard:hover {
-  background: #000000; /* Negro */
+  background: #000000;
 }
 
-/* título rojo en hover */
 .plasmaCard:hover .title {
   color: #ff2a2a;
 }
 
-/* texto blanco en hover */
 .plasmaCard:hover .contentText * {
   color: #ffffff !important;
 }
 
 /* ===============================
-   SECCIÓN IZQUIERDA (texto)
+   IZQUIERDA (texto)
    =============================== */
 
 .left {
@@ -80,7 +78,7 @@
 }
 
 /* ===============================
-   SECCIÓN DERECHA (imagen)
+   DERECHA (imagen)
    =============================== */
 
 .right {
@@ -90,7 +88,7 @@
 }
 
 /* ===============================
-   PLASMA AURA (BLUR GLOW)
+   🍷 PLASMA AURA (Wine Glow)
    =============================== */
 
 .plasmaCard::before,
@@ -104,34 +102,34 @@
   z-index: -1;
 }
 
-/* Blob azul/cian */
+/* Aura VINO claro + vino brillante */
 .plasmaCard::before {
   width: 190%;
   height: 190%;
   top: -55%;
   left: -45%;
   background:
-    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.9), transparent 55%),
-    radial-gradient(circle at 80% 40%, rgba(59, 130, 246, 0.8), transparent 55%),
-    radial-gradient(circle at 40% 80%, rgba(129, 140, 248, 0.75), transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(150, 0, 50, 0.9), transparent 55%),
+    radial-gradient(circle at 80% 40%, rgba(180, 0, 70, 0.85), transparent 55%),
+    radial-gradient(circle at 40% 80%, rgba(120, 0, 40, 0.75), transparent 50%);
   animation: plasmaDrift1 20s ease-in-out infinite alternate;
 }
 
-/* Blob violeta */
+/* Aura VINO oscuro */
 .plasmaCard::after {
   width: 180%;
   height: 180%;
   bottom: -50%;
   right: -35%;
   background:
-    radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.75), transparent 55%),
-    radial-gradient(circle at 70% 70%, rgba(14, 165, 233, 0.65), transparent 55%),
-    radial-gradient(circle at 50% 10%, rgba(8, 47, 73, 0.85), transparent 60%);
+    radial-gradient(circle at 30% 30%, rgba(70, 0, 25, 0.75), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(90, 0, 35, 0.65), transparent 55%),
+    radial-gradient(circle at 50% 10%, rgba(50, 0, 20, 0.85), transparent 60%);
   animation: plasmaDrift2 24s ease-in-out infinite alternate;
 }
 
 /* ===============================
-   ANIMACIÓN AURA PLASMA
+   ANIMACIONES AURA
    =============================== */
 
 @keyframes plasmaDrift1 {
@@ -147,27 +145,27 @@
 }
 
 /* ===============================
-   🔥 STORM GLOW – SOMBRA ROJA
+   🍷 STORM GLOW – sombra vino
    =============================== */
 
 @keyframes stormGlow {
   0% {
     box-shadow:
-      0 0 20px rgba(255, 40, 40, 0.6),
-      0 0 45px rgba(200, 0, 0, 0.45),
-      0 0 80px rgba(255, 90, 90, 0.4);
+      0 0 20px rgba(150, 0, 50, 0.6),
+      0 0 45px rgba(90, 0, 30, 0.45),
+      0 0 80px rgba(170, 0, 60, 0.4);
   }
   50% {
     box-shadow:
-      0 0 30px rgba(255, 10, 10, 0.85),
-      0 0 65px rgba(200, 0, 0, 0.6),
-      0 0 110px rgba(255, 50, 50, 0.55);
+      0 0 30px rgba(190, 0, 70, 0.85),
+      0 0 65px rgba(110, 0, 45, 0.6),
+      0 0 110px rgba(220, 0, 80, 0.55);
   }
   100% {
     box-shadow:
-      0 0 20px rgba(255, 40, 40, 0.6),
-      0 0 45px rgba(200, 0, 0, 0.45),
-      0 0 80px rgba(255, 90, 90, 0.4);
+      0 0 20px rgba(150, 0, 50, 0.6),
+      0 0 45px rgba(90, 0, 30, 0.45),
+      0 0 80px rgba(170, 0, 60, 0.4);
   }
 }
 
