@@ -1,145 +1,139 @@
-/* =============================== */
-/*   CONTENEDOR GENERAL            */
-/* =============================== */
-
-.twoCol {
+/* ===============================
+   WRAPPER
+   =============================== */
+.wrapper {
   width: 100%;
-  margin-top: 20px;
-  border-radius: 28px;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background: radial-gradient(circle at top, #020617, #020014 50%, #000 100%);
+}
+
+/* ===============================
+   PLASMA CARD
+   =============================== */
+.plasmaCard {
+  width: 60%;
+  max-width: 680px;
+  background: radial-gradient(circle at top left, #1f2937, #020617 60%);
+  border-radius: 18px;
+  padding: 32px 36px;
   position: relative;
-  padding: 2px; /* borde glowing */
-}
+  overflow: hidden;
 
-
-/* =============================== */
-/*   HELL PULSE — GOLD EDITION     */
-/* =============================== */
-
-.hellPulseGold {
-  background: radial-gradient(circle at top, #ffcc33, #4a3500 55%, #1a1500 100%);
   box-shadow:
-    0 0 60px rgba(255, 215, 50, 0.55),
-    0 0 120px rgba(255, 180, 0, 0.35);
-  animation: hellPulseGoldAnim 1.7s ease-in-out infinite;
+    0 0 22px rgba(56, 189, 248, 0.5),
+    0 0 50px rgba(59, 130, 246, 0.45),
+    0 0 80px rgba(129, 140, 248, 0.4);
+
+  animation: stormGlow 5.5s ease-in-out infinite;
 }
 
-@keyframes hellPulseGoldAnim {
+/* ===============================
+   PLASMA BLOBS (AURA)
+   =============================== */
+
+.plasmaCard::before,
+.plasmaCard::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(32px);
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  z-index: -1;
+}
+
+/* Blob azul/cian */
+.plasmaCard::before {
+  width: 220%;
+  height: 220%;
+  top: -60%;
+  left: -40%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.9), transparent 55%),
+    radial-gradient(circle at 80% 40%, rgba(59, 130, 246, 0.8), transparent 55%),
+    radial-gradient(circle at 40% 80%, rgba(129, 140, 248, 0.75), transparent 50%);
+
+  animation: plasmaDrift1 18s ease-in-out infinite alternate;
+}
+
+/* Blob violeta */
+.plasmaCard::after {
+  width: 200%;
+  height: 200%;
+  bottom: -50%;
+  right: -30%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.8), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(14, 165, 233, 0.7), transparent 55%),
+    radial-gradient(circle at 50% 10%, rgba(8, 47, 73, 0.9), transparent 60%);
+
+  animation: plasmaDrift2 22s ease-in-out infinite alternate;
+}
+
+/* ===============================
+   ANIMACIÓN DE LOS BLOBS
+   =============================== */
+
+@keyframes plasmaDrift1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
+  50% { transform: translate3d(8%, 4%, 0) scale(1.05); opacity: 1; }
+  100% { transform: translate3d(-6%, 6%, 0) scale(0.98); opacity: 0.8; }
+}
+
+@keyframes plasmaDrift2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.75; }
+  50% { transform: translate3d(-6%, -4%, 0) scale(1.08); opacity: 0.95; }
+  100% { transform: translate3d(4%, -6%, 0) scale(0.96); opacity: 0.7; }
+}
+
+/* ===============================
+   STORM GLOW — SOMBRA ELÉCTRICA
+   =============================== */
+
+@keyframes stormGlow {
   0% {
-    transform: scale(0.97);
     box-shadow:
-      0 0 30px rgba(255, 195, 0, 0.35),
-      0 0 70px rgba(255, 150, 0, 0.25);
+      0 0 18px rgba(56, 189, 248, 0.6),
+      0 0 40px rgba(59, 130, 246, 0.5),
+      0 0 70px rgba(129, 140, 248, 0.45);
   }
-  50% {
-    transform: scale(1);
+  35% {
     box-shadow:
-      0 0 85px rgba(255, 205, 0, 0.65),
-      0 0 160px rgba(255, 180, 0, 0.45);
+      0 0 26px rgba(56, 189, 248, 0.85),
+      0 0 55px rgba(59, 130, 246, 0.7),
+      0 0 90px rgba(129, 140, 248, 0.55);
+  }
+  70% {
+    box-shadow:
+      0 0 20px rgba(37, 99, 235, 0.7),
+      0 0 50px rgba(6, 182, 212, 0.7),
+      0 0 100px rgba(56, 189, 248, 0.6);
   }
   100% {
-    transform: scale(0.97);
     box-shadow:
-      0 0 30px rgba(255, 195, 0, 0.35),
-      0 0 55px rgba(255, 150, 0, 0.25);
+      0 0 18px rgba(56, 189, 248, 0.6),
+      0 0 40px rgba(59, 130, 246, 0.5),
+      0 0 70px rgba(129, 140, 248, 0.45);
   }
 }
 
+/* ===============================
+   CONTENIDO
+   =============================== */
 
-/* =============================== */
-/*   CARD INTERNO                  */
-/* =============================== */
-
-.inner {
-  background: rgba(25, 15, 0, 0.92);
-  border-radius: 26px;
-  padding: 2.7rem;
-  position: relative;
-
-  box-shadow:
-    inset 0 0 45px rgba(255, 200, 0, 0.35),
-    inset 0 0 65px rgba(150, 100, 0, 0.35);
+.title {
+  margin-bottom: 14px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #f9fafb;
 }
-
-
-/* =============================== */
-/*   LAYOUT DE CONTENIDO           */
-/* =============================== */
-
-.content {
-  display: flex;
-  gap: 2.5rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.left,
-.right {
-  width: 50%;
-}
-
-
-/* =============================== */
-/*   TÍTULO DORADO                 */
-/* =============================== */
-
-.left h2 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-bottom: 1.1rem;
-
-  /* Degradado dorado */
-  background: linear-gradient(90deg, #ffe680, #ffcc33, #ffea9a);
-  -webkit-background-clip: text;
-  color: transparent;
-
-  text-shadow:
-    0 0 18px rgba(255, 230, 150, 0.85),
-    0 0 35px rgba(255, 200, 90, 0.7);
-}
-
-
-/* =============================== */
-/*   CONTENIDO EN BLANCO           */
-/* =============================== */
 
 .contentText * {
-  color: #fff7da !important; /* blanco dorado */
+  color: #d1d5db !important;
 }
 
-.contentText p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  margin: 0 0 1rem 0;
-}
-
-
-/* =============================== */
-/*   IMAGEN                        */
-/* =============================== */
-
-.right img {
-  width: 100%;
-  border-radius: 16px;
-
-  box-shadow:
-    0 0 50px rgba(255, 200, 0, 0.55),
-    0 0 90px rgba(150, 100, 0, 0.35);
-}
-
-
-/* =============================== */
-/*   RESPONSIVE                    */
-/* =============================== */
-
-@media (max-width: 800px) {
-  .content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .left,
-  .right {
-    width: 100%;
-  }
+.imageWrapper {
+  margin-top: 20px;
 }
