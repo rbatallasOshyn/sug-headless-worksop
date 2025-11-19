@@ -10,14 +10,14 @@
 }
 
 /* ===============================
-   PLASMA CARD (con margin-top)
+   CARD CON BORDE NEÓN (60px margin)
    =============================== */
 
 .plasmaCard {
   width: 90%;
   max-width: 1100px;
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 36px;
   display: flex;
   gap: 32px;
@@ -25,26 +25,60 @@
   overflow: hidden;
   margin-top: 60px;
 
-  /* 🍷 Glow VINO intenso */
-  box-shadow:
-    0 0 22px rgba(120, 0, 40, 0.55),
-    0 0 50px rgba(90, 0, 30, 0.45),
-    0 0 80px rgba(160, 0, 60, 0.35);
-
-  animation: stormGlow 6s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   transition: background 0.35s ease, color 0.35s ease;
 }
 
-/* ===============================
-   HOVER – CAMBIO DE ESTILO
-   =============================== */
+/* ==========================================
+   ✨ BORDE NEÓN ESTÁTICO + COLORES CORRIENDO
+   ========================================== */
+
+.plasmaCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 3px; /* grosor del borde */
+
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff5500,
+    #ff8800,
+    #000000,
+    #550000,
+    #ff2200,
+    #ff0000
+  );
+  background-size: 300% 100%;
+
+  /* máscara para dejar solo el borde */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  animation: neonRun 4s linear infinite;
+  pointer-events: none; /* evita bloquear hover */
+}
+
+@keyframes neonRun {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* ===============================================
+   HOVER — fondo negro, texto blanco, título rojo
+   =============================================== */
 
 .plasmaCard:hover {
   background: #000000;
+  cursor: pointer; /* ✔ cursor hand */
 }
 
 .plasmaCard:hover .title {
-  color: #ff2a2a;
+  color: #ff2a2a; /* rojo fuerte */
 }
 
 .plasmaCard:hover .contentText * {
@@ -52,7 +86,7 @@
 }
 
 /* ===============================
-   IZQUIERDA (texto)
+   SECCIÓN IZQUIERDA (texto)
    =============================== */
 
 .left {
@@ -78,95 +112,13 @@
 }
 
 /* ===============================
-   DERECHA (imagen)
+   SECCIÓN DERECHA (imagen)
    =============================== */
 
 .right {
   width: 50%;
   display: flex;
   align-items: center;
-}
-
-/* ===============================
-   🍷 PLASMA AURA (Wine Glow)
-   =============================== */
-
-.plasmaCard::before,
-.plasmaCard::after {
-  content: "";
-  position: absolute;
-  border-radius: 1200px;
-  filter: blur(38px);
-  opacity: 0.85;
-  mix-blend-mode: screen;
-  z-index: -1;
-}
-
-/* Aura VINO claro + vino brillante */
-.plasmaCard::before {
-  width: 190%;
-  height: 190%;
-  top: -55%;
-  left: -45%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(150, 0, 50, 0.9), transparent 55%),
-    radial-gradient(circle at 80% 40%, rgba(180, 0, 70, 0.85), transparent 55%),
-    radial-gradient(circle at 40% 80%, rgba(120, 0, 40, 0.75), transparent 50%);
-  animation: plasmaDrift1 20s ease-in-out infinite alternate;
-}
-
-/* Aura VINO oscuro */
-.plasmaCard::after {
-  width: 180%;
-  height: 180%;
-  bottom: -50%;
-  right: -35%;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(70, 0, 25, 0.75), transparent 55%),
-    radial-gradient(circle at 70% 70%, rgba(90, 0, 35, 0.65), transparent 55%),
-    radial-gradient(circle at 50% 10%, rgba(50, 0, 20, 0.85), transparent 60%);
-  animation: plasmaDrift2 24s ease-in-out infinite alternate;
-}
-
-/* ===============================
-   ANIMACIONES AURA
-   =============================== */
-
-@keyframes plasmaDrift1 {
-  0%   { transform: translate3d(0,0,0) scale(1); opacity: .85; }
-  50%  { transform: translate3d(6%,4%,0) scale(1.05); opacity: 1; }
-  100% { transform: translate3d(-6%,6%,0) scale(.95); opacity: .8; }
-}
-
-@keyframes plasmaDrift2 {
-  0%   { transform: translate3d(0,0,0) scale(1); opacity: .75; }
-  50%  { transform: translate3d(-5%,-3%,0) scale(1.05); opacity: .95; }
-  100% { transform: translate3d(4%,-5%,0) scale(.92); opacity: .7; }
-}
-
-/* ===============================
-   🍷 STORM GLOW – sombra vino
-   =============================== */
-
-@keyframes stormGlow {
-  0% {
-    box-shadow:
-      0 0 20px rgba(150, 0, 50, 0.6),
-      0 0 45px rgba(90, 0, 30, 0.45),
-      0 0 80px rgba(170, 0, 60, 0.4);
-  }
-  50% {
-    box-shadow:
-      0 0 30px rgba(190, 0, 70, 0.85),
-      0 0 65px rgba(110, 0, 45, 0.6),
-      0 0 110px rgba(220, 0, 80, 0.55);
-  }
-  100% {
-    box-shadow:
-      0 0 20px rgba(150, 0, 50, 0.6),
-      0 0 45px rgba(90, 0, 30, 0.45),
-      0 0 80px rgba(170, 0, 60, 0.4);
-  }
 }
 
 /* ===============================
