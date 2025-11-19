@@ -1,44 +1,82 @@
 /* ===============================
-   WRAPPER
+   CONTENEDOR EXTERNO
    =============================== */
+
 .wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 40px 0;
-  background: radial-gradient(circle at top, #020617, #020014 50%, #000 100%);
+  padding: 20px 0;
 }
 
 /* ===============================
-   PLASMA CARD
+   CARD CON PLASMA STORM GLOW
    =============================== */
+
 .plasmaCard {
-  width: 60%;
-  max-width: 680px;
-  background: radial-gradient(circle at top left, #1f2937, #020617 60%);
+  width: 90%;
+  max-width: 1100px;
+  background: #ffffff; /* FONDO ORIGINAL */
   border-radius: 18px;
-  padding: 32px 36px;
+  padding: 36px;
+  display: flex;
+  gap: 32px;
   position: relative;
   overflow: hidden;
 
+  /* Glow eléctrico */
   box-shadow:
-    0 0 22px rgba(56, 189, 248, 0.5),
-    0 0 50px rgba(59, 130, 246, 0.45),
-    0 0 80px rgba(129, 140, 248, 0.4);
+    0 0 22px rgba(56, 189, 248, 0.4),
+    0 0 50px rgba(59, 130, 246, 0.35),
+    0 0 80px rgba(129, 140, 248, 0.32);
 
-  animation: stormGlow 5.5s ease-in-out infinite;
+  animation: stormGlow 6s ease-in-out infinite;
 }
 
 /* ===============================
-   PLASMA BLOBS (AURA)
+   SECCIÓN IZQUIERDA (texto)
+   =============================== */
+
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.contentText * {
+  color: #374151 !important;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* ===============================
+   SECCIÓN DERECHA (imagen)
+   =============================== */
+
+.right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+/* ===============================
+   PLASMA AURA (BLUR GLOW)
    =============================== */
 
 .plasmaCard::before,
 .plasmaCard::after {
   content: "";
   position: absolute;
-  border-radius: 999px;
-  filter: blur(32px);
+  border-radius: 1200px;
+  filter: blur(38px);
   opacity: 0.85;
   mix-blend-mode: screen;
   z-index: -1;
@@ -46,94 +84,82 @@
 
 /* Blob azul/cian */
 .plasmaCard::before {
-  width: 220%;
-  height: 220%;
-  top: -60%;
-  left: -40%;
+  width: 190%;
+  height: 190%;
+  top: -55%;
+  left: -45%;
   background:
     radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.9), transparent 55%),
     radial-gradient(circle at 80% 40%, rgba(59, 130, 246, 0.8), transparent 55%),
     radial-gradient(circle at 40% 80%, rgba(129, 140, 248, 0.75), transparent 50%);
-
-  animation: plasmaDrift1 18s ease-in-out infinite alternate;
+  animation: plasmaDrift1 20s ease-in-out infinite alternate;
 }
 
 /* Blob violeta */
 .plasmaCard::after {
-  width: 200%;
-  height: 200%;
+  width: 180%;
+  height: 180%;
   bottom: -50%;
-  right: -30%;
+  right: -35%;
   background:
-    radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.8), transparent 55%),
-    radial-gradient(circle at 70% 70%, rgba(14, 165, 233, 0.7), transparent 55%),
-    radial-gradient(circle at 50% 10%, rgba(8, 47, 73, 0.9), transparent 60%);
-
-  animation: plasmaDrift2 22s ease-in-out infinite alternate;
+    radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.75), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(14, 165, 233, 0.65), transparent 55%),
+    radial-gradient(circle at 50% 10%, rgba(8, 47, 73, 0.85), transparent 60%);
+  animation: plasmaDrift2 24s ease-in-out infinite alternate;
 }
 
 /* ===============================
-   ANIMACIÓN DE LOS BLOBS
+   ANIMACIONES DE PLASMA
    =============================== */
 
 @keyframes plasmaDrift1 {
-  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
-  50% { transform: translate3d(8%, 4%, 0) scale(1.05); opacity: 1; }
-  100% { transform: translate3d(-6%, 6%, 0) scale(0.98); opacity: 0.8; }
+  0% { transform: translate3d(0,0,0) scale(1); opacity: .85; }
+  50% { transform: translate3d(6%,4%,0) scale(1.05); opacity: 1; }
+  100% { transform: translate3d(-6%,6%,0) scale(.95); opacity: .8; }
 }
 
 @keyframes plasmaDrift2 {
-  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.75; }
-  50% { transform: translate3d(-6%, -4%, 0) scale(1.08); opacity: 0.95; }
-  100% { transform: translate3d(4%, -6%, 0) scale(0.96); opacity: 0.7; }
+  0% { transform: translate3d(0,0,0) scale(1); opacity: .75; }
+  50% { transform: translate3d(-5%,-3%,0) scale(1.05); opacity: .95; }
+  100% { transform: translate3d(4%,-5%,0) scale(.92); opacity: .7; }
 }
 
 /* ===============================
-   STORM GLOW — SOMBRA ELÉCTRICA
+   STORM GLOW (SOMBRA ELECTRICA)
    =============================== */
 
 @keyframes stormGlow {
   0% {
     box-shadow:
-      0 0 18px rgba(56, 189, 248, 0.6),
-      0 0 40px rgba(59, 130, 246, 0.5),
-      0 0 70px rgba(129, 140, 248, 0.45);
+      0 0 18px rgba(56, 189, 248, 0.5),
+      0 0 40px rgba(59, 130, 246, 0.42),
+      0 0 70px rgba(129, 140, 248, 0.40);
   }
-  35% {
+  50% {
     box-shadow:
-      0 0 26px rgba(56, 189, 248, 0.85),
-      0 0 55px rgba(59, 130, 246, 0.7),
-      0 0 90px rgba(129, 140, 248, 0.55);
-  }
-  70% {
-    box-shadow:
-      0 0 20px rgba(37, 99, 235, 0.7),
-      0 0 50px rgba(6, 182, 212, 0.7),
-      0 0 100px rgba(56, 189, 248, 0.6);
+      0 0 26px rgba(56, 189, 248, 0.75),
+      0 0 55px rgba(59, 130, 246, 0.6),
+      0 0 95px rgba(129, 140, 248, 0.55);
   }
   100% {
     box-shadow:
-      0 0 18px rgba(56, 189, 248, 0.6),
-      0 0 40px rgba(59, 130, 246, 0.5),
-      0 0 70px rgba(129, 140, 248, 0.45);
+      0 0 18px rgba(56, 189, 248, 0.5),
+      0 0 40px rgba(59, 130, 246, 0.42),
+      0 0 70px rgba(129, 140, 248, 0.40);
   }
 }
 
 /* ===============================
-   CONTENIDO
+   RESPONSIVO
    =============================== */
 
-.title {
-  margin-bottom: 14px;
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: #f9fafb;
-}
+@media (max-width: 900px) {
+  .plasmaCard {
+    flex-direction: column;
+  }
 
-.contentText * {
-  color: #d1d5db !important;
-}
-
-.imageWrapper {
-  margin-top: 20px;
+  .left,
+  .right {
+    width: 100%;
+  }
 }

@@ -26,16 +26,17 @@ const TwoColumnSection = (props: TwoColumnSectionProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.plasmaCard}>
-        <h2 className={styles.title}>
-          <Text field={fields.Title} />
-        </h2>
-
-        <div className={styles.contentText}>
-          <RichText field={fields.Content} />
+        <div className={styles.left}>
+          <h2 className={styles.title}>
+            <Text field={fields.Title} />
+          </h2>
+          <div className={styles.contentText}>
+            <RichText field={fields.Content} />
+          </div>
         </div>
 
         {fields.Photo && (
-          <div className={styles.imageWrapper}>
+          <div className={styles.right}>
             <NextImage
               field={fields.Photo}
               width={600}
