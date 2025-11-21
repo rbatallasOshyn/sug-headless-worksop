@@ -6,6 +6,8 @@ import {
   TextField,
   RichTextField,
   ImageField,
+  Link,
+  LinkField,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 
 import styles from './DoctorDetailsRed.module.css';
@@ -15,6 +17,8 @@ type DoctorDetailsRedProps = {
     Name: TextField;
     Content: RichTextField;
     Photo: ImageField;
+    CTA: LinkField;
+    CTAText: TextField;
   };
 };
 
@@ -33,6 +37,9 @@ const DoctorDetailsRed = (props: DoctorDetailsRedProps): JSX.Element => {
           <div className={styles.contentText}>
             <RichText field={fields.Content} />
           </div>
+          <Link field={fields.CTA} className="btn red bold big">
+            <Text field={fields.CTAText} />
+          </Link>
         </div>
 
         {fields.Photo && (
