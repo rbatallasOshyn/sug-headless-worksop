@@ -1,5 +1,7 @@
-# Sitecore JSS Next.js Sample Application
+# Sitecore JSS Next.js Sitecore Workshop
 
-[Documentation (Experience Platform)](https://doc.sitecore.com/xp/en/developers/hd/21/sitecore-headless-development/sitecore-javascript-rendering-sdk--jss--for-next-js.html)
+The Sitecore JSS Next.js Sitecore Workshop is a hands-on learning experience designed to help developers understand how to build modern, headless applications using Sitecore JavaScript Services (JSS) and Next.js. This workshop guides participants through the complete process of connecting a Next.js frontend with a Sitecore instance, rendering dynamic components, working with the Layout Service, and enabling full Experience Editor compatibility.
 
-[Documentation (XM Cloud)](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-javascript-rendering-sdk--jss--for-next-js.html)
+#Contributors
+- Ramiro Batallas
+- Gabriel Baldeon
